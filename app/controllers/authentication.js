@@ -19,7 +19,8 @@ function setUserInfo(request) {
         sex: request.sex,
         DOB: request.DOB,
         nationality: request.nationality,
-        hosID: request.hosID
+        hosID: request.hosID,
+        profilePic: request.profilePic
     };
 }
 
@@ -42,7 +43,8 @@ exports.login = function(req,res,next){
             var sex = req.body.sex;
             var DOB = req.body.DOB;
             var nationality = req.body.nationality;
-            
+            var hosID = req.body.hosID;
+            var profilePic = req.body.profilePic
            
         
             if(!email){
@@ -50,7 +52,7 @@ exports.login = function(req,res,next){
             }
         
             if(!password){
-                return res.status(422).send({error: 'You must enrer a password'});
+                return res.status(422).send({error: 'You must enter a password'});
             }
         
             User.findOne({email: email}, function(err, existingUser){
@@ -70,6 +72,8 @@ exports.login = function(req,res,next){
                     lName: lName,
                     sex: sex,
                     DOB: DOB,
+                    hosID: hosID,
+                    profilePic: profilePic,
                     nationality: nationality
                 });
         
