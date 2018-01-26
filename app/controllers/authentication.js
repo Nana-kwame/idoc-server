@@ -20,7 +20,7 @@ function setUserInfo(request) {
         DOB: request.DOB,
         nationality: request.nationality,
         hosID: request.hosID,
-        profilePic: request.profilePic
+        //profilePic: request.profilePic
     };
 }
 
@@ -44,7 +44,7 @@ exports.login = function(req,res,next){
             var DOB = req.body.DOB;
             var nationality = req.body.nationality;
             var hosID = req.body.hosID;
-            var profilePic = req.body.profilePic
+            //var profilePic = req.body.profilePic
            
         
             if(!email){
@@ -73,7 +73,7 @@ exports.login = function(req,res,next){
                     sex: sex,
                     DOB: DOB,
                     hosID: hosID,
-                    profilePic: profilePic,
+                    //profilePic: profilePic,
                     nationality: nationality
                 });
         
