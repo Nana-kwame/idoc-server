@@ -29,7 +29,17 @@ var UserSchema = new mongoose.Schema({
         type: String,
         enum: ['Male', 'Female', 'Other'],
         default: 'Male'
-    }
+    },
+    nationality:{
+        type:String,
+        unique: false,
+        
+    },
+    profilePic:{
+        type: JSON,
+        required:false
+    },
+
  
 }, {
     timestamps: true
