@@ -35,11 +35,11 @@ var UserSchema = new mongoose.Schema({
         unique: false,
         
     }
-    // ,
-    // profilePic:{
-    //     type: JSON,
-    //     required:false
-    // }
+    ,
+    profilePic:{
+        type: String,
+        required:false
+    }
 
  
 }, {
