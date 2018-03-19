@@ -34,11 +34,10 @@ var UserSchema = new mongoose.Schema({
         type:String,
         unique: false,
         
-    }
-    ,
+    },
     profilePic:{
         type: String,
-        required:false
+        
     }
 
  
