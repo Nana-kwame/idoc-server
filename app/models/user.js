@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
- 
+var multer   = require('multer');
 var UserSchema = new mongoose.Schema({
     
     fName:{
@@ -32,18 +32,25 @@ var UserSchema = new mongoose.Schema({
     },
     nationality:{
         type:String,
-        unique: false,
+        unique: false
         
     },
+    hosID:{
+        type:String,
+        required:true,
+        unique: true
+    },
     profilePic:{
-        type: String,
-        
+        type:String
     }
 
  
 }, {
     timestamps: true
 });
+
+/**TESTING PROFILE PCITURE UPLOAD */
+
  
 UserSchema.pre('save', function(next){
  
