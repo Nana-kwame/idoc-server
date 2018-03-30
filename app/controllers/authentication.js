@@ -1,8 +1,6 @@
 
 var jwt = require('jsonwebtoken');
 var User = require('../models/user');
-var fs  =   require('fs');
-var multer   = require('multer');
 var authConfig = require('../../config/auth');
           
 function generateToken(user) {
