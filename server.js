@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var cors = require('cors');
-//var methodOverride = require('method-override');
+var methodOverride = require('method-override');
 
 var databaseConfig= require('./config/database');
 var router = require('./app/models/routes');
@@ -18,7 +18,7 @@ console.log("App listening on port " + process.env.PORT);
 app.use(bodyParser.urlencoded({ extended: false})); // Parses urlencoded bodies
 app.use(bodyParser.json()); // Send JSON responses
 app.use(logger('dev')); //Log requests to API using morgan
-//app.use(methodOverride());
+app.use(methodOverride());
 app.use(cors());
 
 router(app);
