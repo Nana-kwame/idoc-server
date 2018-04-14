@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var cors = require('cors');
-var methodOverride = require('method-override')
+
 
 var databaseConfig= require('./config/database');
 var router = require('./app/models/routes');
