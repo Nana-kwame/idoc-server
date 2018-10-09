@@ -24,6 +24,10 @@ var UserSchema = new mongoose.Schema(
       type: String,
       required: true
     },
+    DOB: {
+      type:String,
+      required: true
+    },
     sex: {
       type: String,
       enum: ["Male", "Female", "Other"],
