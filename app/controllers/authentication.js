@@ -18,8 +18,13 @@ function setUserInfo(request) {
         email: request.email,
         sex: request.sex,
         DOB: request.DOB,
-        nationality: request.nationality,
-        hosID: request.hosID,
+        height: request.height,
+        weight: request.weight,
+        diabetes: request.diabetes,
+        high_cholestrol: request.high_cholestrol,
+        physical_injury: request.physical_injury,
+        hypertension: request.hypertension,
+        smoking: request.smoking,
         profilePic: request.profilePic
     };
 }
@@ -42,8 +47,13 @@ exports.login = function(req,res,next){
             var password= req.body.password;
             var sex = req.body.sex;
             var DOB = req.body.DOB;
-            var nationality = req.body.nationality;
-            var hosID = req.body.hosID;
+            var height= req.body.height;
+            var weight= req.body.weight;
+            var diabetes= req.body.diabetes;
+            var high_cholestrol= req.body.high_cholestrol;
+            var physical_injury= req.body.physical_injury;
+            var hypertension= req.body.hypertension;
+            var smoking= req.body.smoking;
             var profilePic = req.body.profilePic
            
         
@@ -72,7 +82,13 @@ exports.login = function(req,res,next){
                     lName: lName,
                     sex: sex,
                     DOB: DOB,
-                    hosID: hosID,
+                    height: height,
+                    weight:weight,
+                    diabetes:diabetes,
+                    high_cholestrol:high_cholestrol,
+                    physical_injury: physical_injury,
+                    hypertension: hypertension,
+                    smoking: smoking,
                     profilePic: profilePic,
                     nationality: nationality
                 });
