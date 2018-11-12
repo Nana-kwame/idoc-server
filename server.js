@@ -13,7 +13,7 @@ var router = require('./app/models/routes');
 mongoose.connect(databaseConfig.url);
 
 app.listen(process.env.PORT || 30001);
-console.log("App listening on port " + process.env.PORT);
+console.log("App listening on port " + process.env.PORT || '30001');
 
 app.use(bodyParser.urlencoded({ extended: false})); // Parses urlencoded bodies
 app.use(bodyParser.json()); // Send JSON responses
