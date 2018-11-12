@@ -1,82 +1,125 @@
-var mongoose = require("mongoose");
-var bcrypt = require("bcrypt-nodejs");
+/* eslint-disable linebreak-style */
+var mongoose = require('mongoose');
+var bcrypt = require('bcrypt-nodejs');
 var UserSchema = new mongoose.Schema(
   {
     fName: {
       type: String,
       lowercase: true,
       unique: false,
-      required: true
+      required: true,
     },
     lName: {
       type: String,
       lowercase: true,
       unique: false,
-      required: true
+      required: true,
     },
     email: {
       type: String,
       lowercase: true,
       unique: true,
-      required: true
+      required: true,
     },
     password: {
       type: String,
-      required: true
+      required: true,
     },
     DOB: {
-      type:String,
-      required: true
+      type: String,
+      required: true,
     },
     sex: {
       type: String,
-      enum: ["Male", "Female", "Other"],
-      default: "Male"
+      enum: ['Male', 'Female', 'Other'],
+      default: 'Male',
     },
     height: {
-        type: Number,
-        required: true
+      type: Number,
+      required: true,
     },
     weight: {
-        type:Number,
-        required: true
+      type: Number,
+      required: true,
     },
     high_cholestrol: {
-        type: Boolean,
-        default: false
+      type: Boolean,
+      default: false,
     },
     physical_injury: {
-        type: Boolean,
-        default: false
-    }, 
+      type: Boolean,
+      default: false,
+    },
     diabetes: {
-        type: Boolean,
-        default: false
-    }, 
+      type: Boolean,
+      default: false,
+    },
     hypertension: {
-        type: Boolean,
-        default: false
-    }, 
+      type: Boolean,
+      default: false,
+    },
     smoking: {
-        type: Boolean,
-        default:false
+      type: Boolean,
+      default: false,
+    },
+    p_13: { 
+      type: Boolean,
+      default: false,
+    },
+    p_14: {
+      type: Boolean,
+      default: false,
+    },
+    p_15: {
+      type: Boolean,
+      default: false,
+    },
+    p_16: {
+      type: Boolean,
+      default: false,
+    },
+    p_17: {
+      type: Boolean,
+      default: false,
+    },
+    p_18: {
+      type: Boolean,
+      default: false,
+    },
+    p_19: {
+      type: Boolean,
+      default: false,
+    },
+    p_20: {
+      type: Boolean,
+      default: false,
+    },
+    p_21: {
+      type: Boolean,
+      default: false,
+    },
+    p_22: {
+      type: Boolean,
+      default: false,
     },
     profilePic: {
-      type: String
-    }
+      type: String,
+    },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
-/**TESTING PROFILE PCITURE UPLOAD */
+// From where there are p_** it is for assessing the user's geo-risk factors
 
-UserSchema.pre("save", function(next) {
+/** TESTING PROFILE PCITURE UPLOAD */
+
+UserSchema.pre('save', function(next) {
   var user = this;
   var SALT_FACTOR = 5;
 
-  if (!user.isModified("password")) {
+  if (!user.isModified('password')) {
     return next();
   }
 
@@ -106,4 +149,4 @@ UserSchema.methods.comparePassword = function(passwordAttempt, cb) {
   });
 };
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model('User', UserSchema);

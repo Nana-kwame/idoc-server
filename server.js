@@ -8,7 +8,7 @@ var cors = require('cors');
 //var methodOverride = require('method-override');
 
 var databaseConfig= require('./config/database');
-var router = require('./app/models/routes');
+var router = require('./app/models/routes').default;
 
 mongoose.connect(databaseConfig.url);
 
