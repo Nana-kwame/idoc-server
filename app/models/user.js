@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable linebreak-style */
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
