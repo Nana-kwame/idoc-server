@@ -26,8 +26,8 @@ var UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    DOB: {
-      type: String,
+    age: {
+      type: Number,
       required: true,
     },
     sex: {
@@ -105,6 +105,7 @@ var UserSchema = new mongoose.Schema(
     },
     profilePic: {
       type: String,
+      default: 'test'
     },
   },
   {

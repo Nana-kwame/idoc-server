@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 
 var express = require('express');
 var app = express();
@@ -12,8 +13,9 @@ var router = require('./app/models/routes');
 
 mongoose.connect(databaseConfig.url);
 
-app.listen(process.env.PORT || 30001);
-console.log("App listening on port " + process.env.PORT || '30001');
+// eslint-disable-next-line no-undef
+// var port = process.env.PORT || 3001;
+
 
 app.use(bodyParser.urlencoded({ extended: false})); // Parses urlencoded bodies
 app.use(bodyParser.json()); // Send JSON responses
@@ -22,6 +24,9 @@ app.use(logger('dev')); //Log requests to API using morgan
 app.use(cors());
 
 router(app);
+
+app.listen(process.env.PORT || 8081);
+console.log("App listening on port 8081");
 
 /*WATSON DISCOVERY*/
 

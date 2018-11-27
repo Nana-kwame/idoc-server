@@ -20,7 +20,7 @@ function setUserInfo(request) {
         lName: request.lName,
         email: request.email,
         sex: request.sex,
-        DOB: request.DOB,
+        age: request.age,
         height: request.height,
         weight: request.weight,
         diabetes: request.diabetes,
@@ -58,27 +58,25 @@ exports.login = function(req, res, next) {
             var email = req.body.email;
             var password= req.body.password;
             var sex = req.body.sex;
-            var DOB = req.body.DOB;
-            var height= req.body.height;
-            var weight= req.body.weight;
-            var diabetes= req.body.diabetes;
-            var high_cholestrol= req.body.high_cholestrol;
-            var physical_injury= req.body.physical_injury;
-            var hypertension= req.body.hypertension;
-            var smoking= req.body.smoking;
-            var profilePic = req.body.profilePic;
-            
-            // For assessing the patients geo-risk factors
-            var p_13 = request.body.p_13;
-            var p_14 = request.body.p_14;
-            var p_15 = request.body.p_15;
-            var p_16 = request.body.p_16;
-            var p_17 = request.body.p_17;
-            var p_18 = request.body.p_18;
-            var p_19 = request.body.p_19;
-            var p_20 = request.body.p_20;
-            var p_21 = request.body.p_21;
-            var p_22 = request.body.p_22;
+            var age = req.body.age;
+            var height = req.body.height;
+            var weight = req.body.weight;
+            var diabetes = req.body.diabetes;
+            var high_cholestrol = req.body.high_cholestrol;
+            var physical_injury = req.body.physical_injury;
+            var hypertension = req.body.hypertension;
+            var smoking = req.body.smoking;
+            var profilePic = req.body.profilePic;            
+            var p_13 = req.body.p_13;
+            var p_14 = req.body.p_14;
+            var p_15 = req.body.p_15;
+            var p_16 = req.body.p_16;
+            var p_17 = req.body.p_17;
+            var p_18 = req.body.p_18;
+            var p_19 = req.body.p_19;
+            var p_20 = req.body.p_20;
+            var p_21 = req.body.p_21;
+            var p_22 = req.body.p_22;
 
             if(!email) {
                 return res.status(422).send({error: 'You must enter a valid email address'});
@@ -103,7 +101,7 @@ exports.login = function(req, res, next) {
                     fName: fName,
                     lName: lName,
                     sex: sex,
-                    DOB: DOB,
+                    age: age,
                     height: height,
                     weight: weight,
                     diabetes: diabetes,
@@ -122,7 +120,6 @@ exports.login = function(req, res, next) {
                     p_21: p_21,
                     p_22: p_22,
                     profilePic: profilePic,
-                    nationality: nationality,
                 });
 
                 user.save(function(err, user) {
